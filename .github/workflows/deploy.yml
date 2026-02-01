@@ -16,7 +16,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          port: ${{ secrets.SSH_PORT }}
+          envs: PROD_ENV_FILE
           script: |
             TARGET_DIR=~/domains/zrealatorz.com/public_html/CRM
             
@@ -34,6 +34,14 @@ jobs:
             git checkout main
             git pull origin main
             
+            # Create .env file for backend
+            if [ ! -z "$PROD_ENV_FILE" ]; then
+              echo "🔒 Creating .env file..."
+              echo "$PROD_ENV_FILE" > backend/.env
+            fi
+            
             # Run deployment script
             chmod +x deploy.sh
             ./deploy.sh
+      env:
+        PROD_ENV_FILE: ${{ secrets.ENV_FILE }}
