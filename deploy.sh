@@ -14,8 +14,8 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # Configuration (Update these values)
-PROJECT_DIR="$HOME/domains/your-domain.com/public_html/realm-crm"
-PUBLIC_HTML="$HOME/domains/your-domain.com/public_html"
+PROJECT_DIR="$HOME/domains/zrealatorz.com/public_html/CRM"
+PUBLIC_HTML="$HOME/domains/zrealatorz.com/public_html/CRM"
 PM2_APP_NAME="realm-crm-api"
 
 # Function to print colored output

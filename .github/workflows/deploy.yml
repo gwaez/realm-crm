@@ -15,7 +15,8 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ~/domains/your-domain.com/public_html/realm-crm
+            cd ~/domains/zrealatorz.com/public_html/CRM
             chmod +x deploy.sh
             ./deploy.sh
