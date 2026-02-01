@@ -43,5 +43,5 @@ jobs:
             # Run deployment script
             chmod +x deploy.sh
             ./deploy.sh
-      env:
-        PROD_ENV_FILE: ${{ secrets.ENV_FILE }}
+        env:
+          PROD_ENV_FILE: ${{ secrets.ENV_FILE }}
